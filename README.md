@@ -16,10 +16,10 @@ spring, java 등을 intellij로 공부하며 새로 알게 된 내용들을 정�
 
 ### Intellij, Library
 
-* [Maven과 Gradle의 차이](./Maven과 Gradle의 차이.md)
-* [Dependency Injection](./Dependency Injection.md)
+* [Maven과 Gradle의 차이](./Maven_Gradle.md)
+* [Dependency Injection](./Dependency_Injection.md)
 * [MyBatis란?](./Mybatis.md)
-* [Mybatis와 JPA의 차이](./Mybatis와 JPA의 차이.md)
+* [Mybatis와 JPA의 차이](./Mybatis_JPA.md)
 * [Jsoup이란?](./Jsoup.md)
 
 * [log4j란?](./log4j란?.md)
@@ -30,12 +30,12 @@ spring, java 등을 intellij로 공부하며 새로 알게 된 내용들을 정�
 
 ### 디자인 패턴
 
-* [builder pattern](./builder pattern.md)
+* [builder pattern](./builder_pattern.md)
 
 <br/>
 
 ### git
 
-* [git ignore](./git ignore.md)
-* [git branch 개념](./git branch 개념.md)
+* [git ignore](./git_ignore.md)
+* [git branch 개념](./git_branch 개념.md)
 
