@@ -20,11 +20,11 @@ spring, java 등을 intellij로 공부하며 새로 알게 된 내용들을 정�
 * [Dependency Injection](./Dependency Injection.md)
 * [MyBatis란?](./Mybatis.md)
 * [Mybatis와 JPA의 차이](./Mybatis와 JPA의 차이.md)
-* [Jsoup이란?](./Jsoup이란?.md)
+* [Jsoup이란?](./Jsoup.md)
 
 * [log4j란?](./log4j란?.md)
 * [Lombok](./Lombok.md)
-* [Apach commons CLI](./Apach commons CLI.md)
+* [Apach commons CLI](https://github.com/Sanggoe/apache-commons)
 
 <br/>
 
