@@ -111,7 +111,7 @@
 
 #### 컴포넌트 호출 순서
 
-![image-20210217000852328](./images\image-20210217000852328.png)
+![image-20210217000852328](./images/image-20210217000852328.png)
 
 1. Application에서 SqlSessionFactoryBuilder라는 인터페이스를 호출한다.
 2. 해당 빌더가, MyBatis Config File 정보를 읽어온다.
