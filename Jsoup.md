@@ -1,4 +1,4 @@
-# Jsoup (크롤링)
+# Jsoup
 
 <br/>
 
@@ -27,9 +27,7 @@
 
 <br/>
 
-### Jsoup 사용 과정
-
-#### 사용 준비
+### 사용 준비
 
 * jar 파일을 다운로드 받아서 class path에 추가하는 방법도 있다.
 * Maven을 사용중이라면, 다음 의존성을 추가한다.
@@ -50,7 +48,7 @@ implementation 'org.jsoup:jsoup:1.13.1'
 
 <br/>
 
-#### 수행 과정
+### 수행 과정
 
 * Jsoup을 사용해 파싱하는 과정은 이렇다.
   * Connection 객체를 통해 URL에 접속한다.
@@ -61,23 +59,21 @@ implementation 'org.jsoup:jsoup:1.13.1'
 
 <br/>
 
+### 구문 분석(파싱)
+
 #### 1. URL에서 문서 파싱
 
 * 웹에서 HTML 문서를 가져와서 구문을 분석하고, 파싱하는 방법
-* **Jsoup.connect(String url)**
-  * URL을 인자로 주어 해당 주소에 접속하여, Response를 반환한다.
-  * 이어서 Response의 .get() 메소드를 통해 리턴값으로 Document를 얻어온다.
-  * 이를 축약하여 바로 connect().get() 으로 사용할 수도 있다.
 
 ``` java
 Document doc = Jsoup.connect("http://example.com/").get();
 String title = doc.title();
 ```
 
-* URL을 가져오는 동안 오류 발생을 방지하기 위한 IOException을 처리해주어야 한다.
-* 또한, Builder 패턴 형식으로 여러 정보들을 직접 넣어 .post() 메소드를 이용해 Document를 얻을 수도 있다.
-  * 이 방법은 웹 URL(http, https)만 지원한다.
-  * 파일에서 로드하는 경우, 2번의 parse(File in, String charsetName) 을 사용한다.
+* **Jsoup.connect(String url)**
+  * URL을 인자로 주어 해당 주소에 접속하여, Response를 반환한다.
+  * 이어서 Response의 .get() 메소드를 통해 리턴값으로 Document를 얻어온다.
+  * 이를 축약하여 바로 connect().get() 으로 사용할 수도 있다.
 
 ```java
 Document doc = Jsoup.connect("http://example.com")
@@ -88,57 +84,145 @@ Document doc = Jsoup.connect("http://example.com")
   .post();
 ```
 
-* 그 후, 이 Document 객체를 이용해 원하는 Element 등을 파싱하여 사용할 수 있다.
+* URL을 가져오는 동안 오류 발생을 방지하기 위한 IOException을 처리해주어야 한다.
+* 또한, Builder 패턴 형식으로 여러 정보들을 직접 넣어 .post() 메소드를 이용해 Document를 얻을 수도 있다.
+  * 이 방법은 웹 URL(http, https)만 지원한다.
+  * 파일에서 로드하는 경우, 2번의 parse(File in, String charsetName) 을 사용한다.
+* 그 후, 이 Document 객체를 이용해 원하는 Element 등을 파싱하여 사용한다.
 
 <br/>
 
 #### 2. 파일에서 문서 파싱
 
-* Jsoup.parse(File in, String charsetName, String baseUri)
+* HTML이 포함 된 파일이 디스크에 존재할 경우, 해당 경로를 이용해 데이터를 파싱하는 방법
 
 ```java
 File input = new File("/tmp/input.html");
 Document doc = Jsoup.parse(input, "UTF-8", "http://example.com/");
 ```
 
+* **Jsoup.parse(File in, String charsetName, String baseUri)**
+  * 파일 경로를 인자로 하여 파싱한다.
+* 파일을 읽어오는 동안 오류 발생을 방지하기 위한 IOException을 처리해주어야 한다.
+
 <br/>
 
 #### 3. 문자열에서 문서 파싱
 
 ```java
-// 문서 전체를 가진 문자열에서 html을 파싱하는 경우
 String html = "<html><head><title>First parse</title></head>"
   + "<body><p>Parsed HTML into a doc.</p></body></html>";
 Document doc = Jsoup.parse(html);
-
-// 웹 페이지 URL로부터 얻어오는 경우
-Document doc = Jsoup.parse(String html, String baseUri)
 ```
 
-* Jsoup.parse(String html)
+* **Jsoup.parse(String html)**
   * string 형태로 존재하는 html에서 Document 객체를 얻어오기 위한 메소드
-* Jsoup.parse(String html, String baseUri)
+* **Jsoup.parse(String html, String baseUri)**
+  * 페이지가 웹에서 왔고, 절대 URL을 통해 얻기 위하는 경우 사용하는 메소드
 
 <br/>
 
 #### 4. 본문 일부를 가진 문자열에서 파싱
 
+```java
+String html = "<div><p>Lorem ipsum.</p>";
+Document doc = Jsoup.parseBodyFragment(html);
+Element body = doc.body();
 ```
-Document doc = Jsoup.connect("URL").get();
-log(doc.title());
-Elements newsHeadlines = doc.select("tag type");
-for (Element headline : newsHeadlines) {
-    log("%s\n\t%s", headline.attr("title"), headline.absUrl("href"));
+
+* **Jsoup.parseBodyFragment(String html)**
+  * 이 메소드는, 구문 분석된 HTML을 body 요소에 삽입한다.
+  * 즉, **Jsoup.parse(String html)** 방법을 사용하면 일반적인 파싱과 동일한 결과를 얻지만, 이 메소드를 쓰면 사용자가 제공한 HTML이 body의 요소로 구문 분석 되어 반환한다.
+
+<br/>
+
+### 데이터 추출 - DOM 메소드를 이용한 문서 탐색
+
+* 일반적으로 DOM Tree 구조를 이용한 탐색 방법을 사용한다.
+
+```java
+File input = new File("/tmp/input.html");
+Document doc = Jsoup.parse(input, "UTF-8", "http://example.com/");
+
+Element content = doc.getElementById("content");
+Elements links = content.getElementsByTag("a");
+for (Element link : links) {
+  String linkHref = link.attr("href");
+  String linkText = link.text();
 }
 ```
 
 <br/>
 
+#### 요소 찾기
+
+* getElementById(String id)
+* getElementsByTag(String tag)
+* getElementsByClass(String className)
+* getElementsByAttribute(String key) (및 관련 방법)
+* 요소 형제
+  * siblingElements()
+  * firstElementSibling()
+  * lastElementSibling()
+  * extElementSibling()
+  * previousElementSibling()
+* 그래프
+  * parent()
+  * children()
+  * child(int index)
+
 <br/>
 
-### 데이터 추출
+#### 요소 데이터
+
+* 속성 가져 오기 및 설정
+  * attr(String key)
+  * attr(String key, String value)
+* 모든 속성 얻기
+  * attributes()
+* id()
+* className()
+* classNames()
+* 텍스트 내용 가져 오기 및 설정
+  * text()
+  * text(String value)
+* 내부 HTML 콘텐츠 가져 오기 및 설정
+  * html()
+  * html(String value)
+* 외부 HTML 값 얻기
+  * outerHtml() 
+* 데이터 콘텐츠 (예 : script및 style태그) 가져 오기
+  * data()
+* tag()
+* tagName()
 
 <br/>
+
+#### HTML 및 텍스트 조작
+
+* append(String html)
+* prepend(String html)
+* appendText(String text)
+* prependText(String text)
+* appendElement(String tagName)
+* prependElement(String tagName)
+* html(String value)
+
+<br/>
+
+### 데이터 추출 - 선택자 구문을 이용한 문서 탐색
+
+[공식 레퍼런스 참고](https://jsoup.org/cookbook/extracting-data/selector-syntax)
+
+<br/>
+
+<br/>
+
+* Jsoup을 이용해 HTML 페이지를 파싱해서 데이터를 추출할 수도 있고, 데이터를 수정할 수도 있다.
+
+<br/>
+
+#### 그 외 레퍼런스
 
 [참고 - tistory 블로그1](https://offbyone.tistory.com/116)
 
