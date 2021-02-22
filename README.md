@@ -22,7 +22,7 @@ spring, java 등을 intellij로 공부하며 새로 알게 된 내용들을 정�
 * [Mybatis와 JPA의 차이](./Mybatis_JPA.md)
 * [Jsoup이란?](./Jsoup.md)
 
-* [log4j란?](./log4j란?.md)
+* [log4j란?](./log4j.md)
 * [Lombok](./Lombok.md)
 * [Apach commons CLI](https://github.com/Sanggoe/apache-commons)
 
