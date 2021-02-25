@@ -95,8 +95,6 @@ private Element getElement(String storeId, int page) throws IOException {
 
 [빌더 패턴 깃 블로그](https://johngrib.github.io/wiki/builder-pattern/)
 
-
-
 [위키백과](https://ko.wikipedia.org/wiki/%EB%94%94%EC%9E%90%EC%9D%B8_%ED%8C%A8%ED%84%B4#%EC%BB%B4%ED%93%A8%ED%84%B0_%EA%B3%BC%ED%95%99%EC%97%90%EC%84%9C%EC%9D%98_%EB%94%94%EC%9E%90%EC%9D%B8_%ED%8C%A8%ED%84%B4)
 
 [Effective Java](http://book.interpark.com/product/BookDisplay.do?_method=detail&sc.prdNo=294626264&gclid=Cj0KCQiA7NKBBhDBARIsAHbXCB4sGlFHLPOTS57buiXjONgFzMxgi1LjPNM3DixzLzbJ_TalI8v6ZeoaAoKiEALw_wcB)
