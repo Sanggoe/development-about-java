@@ -23,7 +23,7 @@ spring, java 등을 intellij로 공부하며 새로 알게 된 내용들을 정�
 * [Jsoup이란?](./Jsoup.md)
 
 * [log4j, logback 그리고 log4j2](./log4j.md)
-* [Lombok](./Lombok.md)
+* [Lombok](./Lombok.md) 수정중
 * [Apach commons CLI](https://github.com/Sanggoe/apache-commons)
 
 <br/>
