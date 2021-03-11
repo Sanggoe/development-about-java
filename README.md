@@ -34,8 +34,13 @@ spring, java 등을 intellij로 공부하며 새로 알게 된 내용들을 정�
 
 <br/>
 
+### CI/CD
+
+* [CI/CD](./CI_CD.md)
+
 ### git
 
 * [git ignore](./git_ignore.md)
 * [git branch 개념](./git_branch_개념.md)
 
+<br/>
