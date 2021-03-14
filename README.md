@@ -37,6 +37,7 @@ spring, java 등을 intellij로 공부하며 새로 알게 된 내용들을 정�
 ### CI/CD
 
 * [CI/CD](./CI_CD.md)
+* Jenkins
 
 ### git
 
