@@ -60,23 +60,39 @@
 
 ![image-20210314231316424](./images/image-20210314231316424.png)
 
+<br/>
 
+<br/>
 
-장점
+<br/>
 
+### 장점
 
+<br/>
 
-기법의 종류(?) - 애자일 방식 협력
+### 기법의 종류(?) 모델(?)
+
+#### 폭포수 모델
+
+![image-20210314233754635](./images/image-20210314233754635.png)
+
+<br/>
+
+#### 애자일 모델
+
+으어 이것도 이미지 만들자.
 
 * 오늘날 개발하는 환경 및 문화는 혼자서 프로젝트를 모두 맡아 개발하는 경우도 간혹 있지만, 각 다른 기능을 동시에 작업할 수 있도록 협업을 기반으로 하는 경우가 대부분이다.!!!
 
-
+<br/>
 
 <br/>
 
 #### Ref
 
 [CI/CD 개념, 방법, 장점, 구현과정](https://www.redhat.com/ko/topics/devops/what-is-ci-cd)
+
+[CI/CD 개발 방법론](https://pepgotesting.com/continuous-integration/)
 
 [CI/CD 의 개념, 적용해본 후기](https://deveric.tistory.com/106)
 
