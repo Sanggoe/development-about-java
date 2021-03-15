@@ -1,6 +1,6 @@
 # development-about-java
 
-spring, java 등을 intellij로 공부하며 새로 알게 된 내용들을 정리하는 저장소
+공부하며 새로 알게 된 spring, java, intellij 및 연계된 개발 관련 내용들을 정리하는 저장소
 
 <br/>
 
@@ -12,12 +12,13 @@ spring, java 등을 intellij로 공부하며 새로 알게 된 내용들을 정�
 * [Lambda]()
 * [Stream]()
 
+yet
+
 <br/>
 
 ### Intellij, Library
 
 * [Maven과 Gradle의 차이](./Maven_Gradle.md) 수정중
-* [Dependency Injection]()
 * [MyBatis란?](./Mybatis.md)
 * [Mybatis와 JPA의 차이](./Mybatis_JPA.md) 수정중
 * [Jsoup이란?](./Jsoup.md)
@@ -36,12 +37,11 @@ spring, java 등을 intellij로 공부하며 새로 알게 된 내용들을 정�
 
 ### CI/CD
 
-* [CI/CD](./CI_CD.md)
-* Jenkins
+* [CI/CD](https://github.com/Sanggoe/DevOps/CI_CD.md)
 
 ### git
 
 * [git ignore](./git_ignore.md)
-* [git branch 개념](./git_branch_개념.md)
+* [git branch 개념](./git_branch_개념.md) yet
 
 <br/>
