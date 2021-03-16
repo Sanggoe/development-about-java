@@ -37,7 +37,7 @@ yet
 
 ### CI/CD
 
-* [CI/CD](https://github.com/Sanggoe/DevOps/CI_CD.md)
+* [CI/CD](https://github.com/Sanggoe/DevOps/blob/main/CI_CD.md)
 
 ### git
 
