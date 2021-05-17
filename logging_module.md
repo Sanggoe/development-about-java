@@ -1,4 +1,4 @@
-# Logging 모듈
+# Logging Module
 
 <br/>
 
@@ -37,6 +37,7 @@
 * slf4j는 logging에 대한 추상체를 제공한다.
 * 자바 입장에서 보면, interface 집합체라고 볼 수 있다.
 * 구현체를 손쉽게 교체할 수 있도록 도와주는 프레임워크이다.
+* 실제 로그를 어떤 구현체로 출력할건지를 선택하기 위해 logback 또는 log4j2를 사용하는 것이다.
 
 <br/>
 
@@ -65,15 +66,14 @@
 
 ### log4j2 사용방법
 
-* 아무래도 가장 최신 버전의, 가장 개선되고 장점을 가진 log4j2를 사용하는 것이 나은 방법이라고 생각한다.
-* log4j2의 사용방법을 알아보자.
-
 <br/>
 
-1. 먼저 의존성을 추가해준다.
-   * 기본적으로 스프링은 slf4j 로깅 프레임워크를 사용한다.
-   * Gradle 프로젝트의 경우 build.gradle에 dependencies를 추가해주어야 한다.
-   * 다음은 스프링 부트에서 log4j2를 추가한 코드 예시
+#### 1. 먼저 의존성을 추가해준다.
+
+* 기본적으로 스프링은 slf4j 로깅 프레임워크를 사용한다.
+* Gradle 프로젝트의 경우 build.gradle에 dependencies를 추가해줘야 한다.
+* Maven 프로젝트의 경우 pom.xml에 dependencies를 추가해줘야 한다.
+* 다음은 스프링 부트에서 log4j2를 추가한 코드 예시
 
 ```groovy
 dependencies {
@@ -85,6 +85,8 @@ dependencies {
     }
 }
 ```
+
+* log4j
 
 <br/>
 
@@ -138,3 +140,6 @@ log.error("error level");
 
 [slf4j](https://inyl.github.io/programming/2017/05/05/slf4j.html)
 
+[slf4j와 log4j2 연동하기](http://dveamer.github.io/java/SLF4J-Log4J2.html)
+
+[스프링 부트에 log4j2 적용하기](https://twofootdog.tistory.com/52)
